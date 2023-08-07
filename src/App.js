@@ -7,8 +7,18 @@ const App = () => {
 
   const handleGamePlay = (clickedSquare) => {
     let updateBoard = [...board]
-    updateBoard[clickedSquare] = "🌳"
+    // set condition for if treasure local is same as clicked index
+    if(clickedSquare === treasureLocation) {
+      updateBoard[clickedSquare] = "💎"
+      setBoard(updateBoard)
+    } else if (clickedSquare === bombLocation)
+    {
+    updateBoard[clickedSquare] = "💣"
     setBoard(updateBoard)
+    } else {
+      updateBoard[clickedSquare] = "🌳"
+      setBoard(updateBoard)
+    }
   }
   const [board, setBoard] = useState([
     "?",
@@ -21,6 +31,16 @@ const App = () => {
     "?",
     "?"
   ])
+
+  const [treasureLocation, setTreasureLocation] = useState(
+    Math.floor(Math.random() * board.length)
+  )
+  // console.log(treasureLocation)
+
+  const [bombLocation, setBombLocation] = useState(
+    Math.floor(Math.random() * board.length)
+  )
+
 
   
   return (

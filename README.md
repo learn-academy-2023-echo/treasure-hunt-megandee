@@ -31,6 +31,8 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     -updted value of square at specific index to be tree emoji
 
 - As a user, if I select the winning square the question mark will become a treasure emoji and if I select the losing square the question mark will become a bomb emoji.
+    - branch: treasure-bomb   
+    - made new state value for treasure and bomb
 
 
 - As a user, I can click on a “Play Again” button that will restart the game.
